@@ -2,13 +2,29 @@
 <title> Cassandra's Interactive Storytelling Projects </title>
 </head>
 <style>
-    #pdf{
-        width: 85%;
-        height: 975px;
-    }
+
 </style>
 <body>
-    <iframe if="pdf"src="Assignment2.pdf" frameborder="0"></iframe>
-
+    <style>
+        #pdf-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+    <iframe id="pdf-frame" src="Assignment2.pdf#zoom=page-width"></iframe>
+    
+    <script>
+        var pdfFrame = document.getElementById('pdf-frame');
+        pdfFrame.style.width = window.innerWidth + 'px';
+        pdfFrame.style.height = window.innerHeight + 'px';
+        window.addEventListener('resize', function(){
+            pdfFrame.style.width = window.innerWidth + 'px';
+            pdfFrame.style.height = window.innerHeight + 'px';
+        });
+    </script>
 </body>
 </html>
